@@ -56,7 +56,7 @@ module Querly
     end
 
     def parser
-      Parser::Ruby24.new(Builder.new).tap do |parser|
+      Parser::CurrentRuby.new(Builder.new).tap do |parser|
         parser.diagnostics.all_errors_are_fatal = true
         parser.diagnostics.ignore_warnings = true
       end
